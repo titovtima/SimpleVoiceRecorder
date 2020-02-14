@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.media.MediaRecorder
+import android.os.Environment
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             outFile.delete()
         }
 
-        filename = this.getExternalFilesDir(null)!!.absolutePath + "/recording.3gpp"
+        filename = Environment.getExternalStorageDirectory().absolutePath + "/recording.3gpp"
 
         recorder = MediaRecorder()
         recorder!!.setAudioSource(MediaRecorder.AudioSource.MIC)
